@@ -38,4 +38,4 @@ def decode(lst):
 @given(text())
 def test_decode_inverts_encode(s):
     # add your assertion!
-    assert decode(encode(s))
+    assert decode(encode(s)) == s
