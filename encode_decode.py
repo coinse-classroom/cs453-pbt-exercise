@@ -34,8 +34,3 @@ def decode(lst):
 # We want to know that the decode function is indeed the
 # inverse of the encode function. How would we express this in
 # hypothesis?
-
-@given(text())
-def test_decode_inverts_encode(s):
-    # add your assertion!
-    assert decode(encode(s)) == s

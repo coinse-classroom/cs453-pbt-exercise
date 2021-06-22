@@ -22,8 +22,3 @@ def buggy_triangle_func(a, b, c):
 
 # use hypothesis.assume to ignore the cases in which 
 # `buggy_triangle_func` returns a nonzero value.
-
-@given(integers(), integers(), integers())
-def test_nontriangle_prop(a, b, c):
-    assume(buggy_triangle_func(a, b, c) == 0)
-    assert 2*max([a, b, c]) >= sum([a, b, c])

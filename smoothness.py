@@ -16,14 +16,5 @@ def pathologic_sin(v):
 # in this example, make sure to restrict your float range to between
 # -1 and 1.
 
-def smooth_at_v(v, func):
-    epsilon = random()*1e-2 - 5e-3
-    return abs((func(v+epsilon)-func(v))/epsilon) < 1
+# hint: first implement the smoothness check at a specific value v :)
 
-@given(floats(min_value=-1, max_value=1))
-def test_if_sin_smooth(v):
-    assert smooth_at_v(v, sin)
-
-@given(floats(min_value=-1, max_value=1))
-def test_if_psin_smooth(v):
-    assert smooth_at_v(v, pathologic_sin)

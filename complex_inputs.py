@@ -59,14 +59,3 @@ def polynomial_add(p1: Polynomial, p2: Polynomial):
 # write the test function that generates polynomials and tests the
 # property that when adding two polynomials, the degree of the new
 # polynomial cannot exceed that of the two added polynomials.
-
-@given(builds(Polynomial, lists(integers(), min_size=1, max_size=6)),
-       builds(Polynomial, lists(integers(), min_size=1, max_size=6)))
-def test_polynomial_add(p1, p2):
-    new_polynomial = polynomial_add(p1, p2)
-    assert new_polynomial.degree() <= max(p1.degree(), p2.degree())
-
-# you can also use this formulation to see a weakness of hypothesis:
-# while the degree of the new polynomial does not have to be *exactly*
-# the maximum degree of the two added polynomials (consider -x and x), 
-# hypothesis fails to find a counterexample for that property.
